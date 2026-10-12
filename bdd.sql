@@ -12,7 +12,7 @@ CREATE TABLE sound (
     link varchar(255) not null,
     added date not null,
     id_category int not null,
-    foreign key (id_category) references category (id_category) );name VARCHAR(255) NOT NULL );
+    foreign key (id_category) references category (id_category) );
 
 create table user (
     id_user int auto_increment primary key,
