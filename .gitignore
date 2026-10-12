@@ -1,3 +1,5 @@
 /node_modules
+bdd.sql
+package-lock.json
 .env
-.package.json
+package.json
