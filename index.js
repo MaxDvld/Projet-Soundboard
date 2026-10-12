@@ -1,7 +1,7 @@
 import express from 'express';
 import dotenv from 'dotenv';
 import authroute from './Routes/auth.route.js'
-import UsersRoute from './Routes/users.route.js'
+import UsersRoute from './Routes/user.route.js'
 import checkToken from './Middleware/auth.middleware.js'
 import CategoryRoute from './Routes/category.route.js'
 
