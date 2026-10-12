@@ -8,6 +8,11 @@ async function getAll() {
     return rows;
 }
 
+async function getByLogin(login) {
+    const [rows] = await Db.query(`SELECT id_user, username, mail, password FROM user WHERE username = ? OR mail = ?`, [login, login]);
+    return rows[0];
+}
+
 
 async function getById(id) {
     const [rows] = await Db.query(`SELECT  id_user, username, mail, password FROM user WHERE id_user = ?`, [id]);
@@ -35,4 +40,5 @@ export default {
     insert,
     update,
     deleteUser,
+    getByLogin,
 }

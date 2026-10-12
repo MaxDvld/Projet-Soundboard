@@ -13,7 +13,7 @@ app.use(express.json());
 
 app.use("/auth", authroute);
 app.use("/users", checkToken, UsersRoute);
-app.use("/category", CategoryRoute);
+app.use("/category", checkToken, CategoryRoute);
 
 app.get('/', (req, res) => {
     res.json({status: 'OK'});

@@ -29,6 +29,8 @@ async function getById(req, res) {
 async function insert(req, res) {
     try {
         const body = req.body;
+
+        body.password = bcrypt.hashSync(body.password, 10);
         if(!body.username || !body.mail || !body.password){
             return res.status(403).json({error : "Tout les champs sont requis !"})
         }
