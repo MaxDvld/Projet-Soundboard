@@ -1,4 +1,4 @@
-import db from "../config/db.config.js"
+import  db from '../Config/db.js'
 
 async function getAll() {
     const [rows] = await db.query("SELECT id_sound, name, link, added, id_category FROM sound");
@@ -12,9 +12,11 @@ async function getById(id) {
 }
 
 async function insert(sound) {
-    const [rows] = await db.query("INSERT INTO sound id_sound, name, link, added, id_category VALUES (?, ?, ?, ?, ?)", 
-        [sound.id_sound, sound.name, sound.link, sound.added, sound.id_category]);
-    return rows;
+    const [result] = await db.query(
+        "INSERT INTO sound (name, link, added, id_category) VALUES (?, ?, ?, ?)",
+        [sound.name, sound.link, sound.added, sound.id_category]
+    );
+    return result;
 }
 
 async function deleteSound(id) {
